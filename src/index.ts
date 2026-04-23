@@ -15,7 +15,7 @@ app.use('*', async (c, next) => {
   c.header('Access-Control-Allow-Origin', '*');
   c.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   c.header('Access-Control-Allow-Headers', 'Content-Type, X-RapidAPI-Proxy-Secret, X-RapidAPI-Key');
-  if (c.req.method === 'OPTIONS') return c.text('', 204);
+  if (c.req.method === 'OPTIONS') return c.body(null, 204);
   await next();
 });
 
